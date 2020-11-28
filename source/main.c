@@ -60,14 +60,14 @@ int main(int argc, char **argv)
         printf("Failed to initialize spl: 0x%x\n", rc);
         can_reboot = false;
     } else {
-        FILE *f = fopen("sdmc:/ReiNX.bin", "rb");
+        FILE *f = fopen("sdmc:/Lakka.bin", "rb");
         if (f == NULL) {
-            printf("Failed to open ReiNX.bin!\n");
+            printf("Failed to launch Lakka!\n");
             can_reboot = false;
         } else {
             fread(g_reboot_payload, 1, sizeof(g_reboot_payload), f);
             fclose(f);
-            printf("Press [-] to reboot to payload\n");
+            printf("Press [-] to reboot to Lakka\n");
         }
     }
         
